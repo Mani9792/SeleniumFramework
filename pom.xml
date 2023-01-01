@@ -6,6 +6,49 @@
   <name>Framework</name>
   <description>To design proper framework for ecommerce site</description>
   
+  
+  <!--  To Run project in terminal
+   creating Profiles in order to run the project through Maven commands in Terminal
+  Profiles provide easier management of testng.xml in projects if we have multiple xml files
+  for smoke regression etc..,
+  
+  use tag <profiles/>
+  <profile/>
+  <id/>
+  
+  creating one below
+  -->
+  
+  <profiles>
+  <profile>
+  <id>Regression</id>
+  
+  <build>
+  <plugins>
+  <plugin>
+  <!-- apache plugin for generating test reports -->
+  <groupId>org.apache.maven.plugins</groupId>																																								
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.19.1</version>
+        <configuration>
+          <suiteXmlFiles>
+          
+           <!-- <suiteXmlFile>src\test\resources\project_1_Files\TestSuite.xml</suiteXmlFile>
+            <suiteXmlFile>src\test\resources\project_2_files\Test_2.xml</suiteXmlFile>-->
+            <suiteXmlFile>testng.xml</suiteXmlFile>
+                        
+          </suiteXmlFiles>
+        </configuration>
+ </plugin>
+ 
+  </plugins>
+  </build>
+  
+  </profile>
+  </profiles>
+  
+  
+  
   <build>
   <plugins>
   <plugin>
@@ -20,6 +63,8 @@
           </suiteXmlFiles>
         </configuration>
  </plugin>
+ 
+ 
  <!-- compiler plugin to compile -->
 <plugin>
 <artifactId>maven-compiler-plugin</artifactId>

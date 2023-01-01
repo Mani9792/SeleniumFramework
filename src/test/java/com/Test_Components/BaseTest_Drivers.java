@@ -30,7 +30,11 @@ public class BaseTest_Drivers {
 	
 	public WebDriver initializeDriver() throws IOException
 	{		
-		String browser = config.configure("browser");
+		//System.getProperty is added in String browser to ensure that the project run as per updates
+		// through the maven commands from terminal
+		
+		String browser = System.getProperty("browser")!=null ? 
+				System.getProperty("browser"):config.configure("browser");
 		
 		if(browser.equalsIgnoreCase("chrome"))
 		{
