@@ -88,7 +88,7 @@ public class BaseTest_Drivers {
 	@AfterMethod
 	public void tearDown()
 	{
-		driver.quit();
+		driver.close();
 	}
 	
 	public String getScreenshot(String testCaseName, WebDriver driver) throws IOException 

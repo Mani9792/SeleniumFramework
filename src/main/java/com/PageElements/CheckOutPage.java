@@ -31,14 +31,17 @@ public class CheckOutPage extends AbstractComponents{
 	
 	public void selectCountry(String countryName)
 	{
-		//waitForElementToAppear(country);
+		waitForElementToAppear(country);
         country.sendKeys(countryName);
-		
+        waitForElementToAppear(selectCountry);
 		selectCountry.click();
 	}
 	
-	public ConfirmationPage placeOrder()
+	public ConfirmationPage placeOrder() throws InterruptedException
 	{
+		javaSleep(5000);
+		scrollToElement(placeOrder);
+		waitForElementToAppear(placeOrder);
         placeOrder.click();
         
         ConfirmationPage confLog = new ConfirmationPage(driver);
