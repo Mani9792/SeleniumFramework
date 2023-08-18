@@ -12,6 +12,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
@@ -38,8 +39,10 @@ public class BaseTest_Drivers {
 		
 		if(browser.equalsIgnoreCase("chrome"))
 		{
+			ChromeOptions co = new ChromeOptions();
+			co.addArguments("--remote-allow-origins=*"); //using this to get rid of Web socket issues in Chrome version > 111..
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+			driver = new ChromeDriver(co);
 		}
 		
 		else if(browser.equalsIgnoreCase("firefox"))

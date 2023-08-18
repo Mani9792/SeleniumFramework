@@ -58,8 +58,10 @@
         <version>2.19.1</version>
         <configuration>
           <suiteXmlFiles>
-            <suiteXmlFile>src\test\resources\project_1_Files\TestSuite.xml</suiteXmlFile>
-            <suiteXmlFile>src\test\resources\project_2_files\Test_2.xml</suiteXmlFile>
+          <!--  <suiteXmlFile>src\test\resources\project_1_Files\TestSuite.xml</suiteXmlFile>
+            <suiteXmlFile>src\test\resources\project_2_files\Test_2.xml</suiteXmlFile> -->
+            <suiteXmlFile>testng.xml</suiteXmlFile>
+            
           </suiteXmlFiles>
         </configuration>
  </plugin>
