@@ -72,7 +72,6 @@ public class LoginPage extends AbstractComponents{
 	{
 		waitForElementToAppear(errorMessage);
 		System.out.println(errorMessage.getText());
-		waitForElementToDisappear(errorMessage);
 		return errorMessage.getText();			
 	}
 		

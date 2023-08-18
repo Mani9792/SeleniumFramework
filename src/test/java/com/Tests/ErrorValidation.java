@@ -41,7 +41,7 @@ public class ErrorValidation extends BaseTest_Drivers{
 		login.login_password(config.configure("password_EV"));
 		login.login_button();
 		login.errorValidn();
-		Assert.assertEquals("Incorrect email or password", login.errorValidn());
+		Assert.assertEquals(config.configure("errorMsg"), login.errorValidn());
 			
 	}
 
