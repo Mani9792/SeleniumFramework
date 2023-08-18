@@ -12,8 +12,6 @@ import com.Utils.AbstractComponents;
 public class OrderPage extends AbstractComponents{
 	
 	WebDriver driver;
-
-	
 	
 	@FindBy(xpath="//table[contains(@class,'table')]/tbody/tr/td[2]")
 	List<WebElement> orderProductNames;
