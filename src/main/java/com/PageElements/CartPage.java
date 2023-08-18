@@ -36,17 +36,18 @@ public class CartPage extends AbstractComponents{
 	{
 		
         List<WebElement> cartProducts = getCartList();
-		
+        System.out.println("Products in Cart : ");
 		for(int i=0;i<cartProducts.size();i++)
 		{
 			System.out.println(cartProducts.get(i).getText());
 			
 			if(cartProducts.get(i).getText().equalsIgnoreCase(productName))
 			{
-				//click on BuyNow
-				checkOut.click();
+				System.out.println("Product is added to the cart");
 			}
 		}
+		//Click on Check out
+		checkOut.click();
 		
 		CheckOutPage checkOutLog = new CheckOutPage(driver);
 		return checkOutLog;

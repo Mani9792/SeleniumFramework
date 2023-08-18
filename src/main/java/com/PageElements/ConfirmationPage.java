@@ -19,11 +19,16 @@ WebDriver driver;
 	}
 	
 	@FindBy(xpath="//h1[@class='hero-primary']")
+	WebElement orderConfirmationMsg;
+	
+	@FindBy(xpath="//div[@id='toast-container']")
 	WebElement orderSuccessMsg;
 	
 	public String verifyOrderSuccessMsg()
 	{
-		return orderSuccessMsg.getText();
+		waitForElementToAppear(orderSuccessMsg);
+		System.out.println(orderSuccessMsg.getText());
+		return orderConfirmationMsg.getText();
 	}
 
 }

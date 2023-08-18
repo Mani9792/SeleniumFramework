@@ -45,7 +45,7 @@ import com.Utils.AbstractComponents;
 		
 		for(int i=0;i<products.size();i++)
 		{
-			System.out.println(products.get(i).getText());			
+			//System.out.println(products.get(i).getText());			
 			
 			if(products.get(i).getText().equalsIgnoreCase(productName))//ZARA COAT 3
 			{   

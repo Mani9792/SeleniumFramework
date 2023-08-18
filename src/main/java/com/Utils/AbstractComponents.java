@@ -3,8 +3,10 @@ package com.Utils;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -38,7 +40,7 @@ public class AbstractComponents {
 	
 	public void waitForElementToAppear_By(By element)
 	{
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(element));
 	}
 	
@@ -48,6 +50,25 @@ public class AbstractComponents {
 		wait.until(ExpectedConditions.invisibilityOf(element));
 	}
 	
+	public void scrollToElement(WebElement element)
+	{
+		JavascriptExecutor js= (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].scrollIntoView();", element);
+	}
+	
+	public void javaSleep(long seconds) throws InterruptedException
+	{
+		Thread.sleep(seconds);
+	}
+	
+	public void moveToElementAndClick(WebElement element)
+	{
+		Actions action=new Actions(driver);
+		action.moveToElement(element).build().perform();
+		action.click(element);
+	}
+	
+	//Common elements in Tabs of all pages
 	public CartPage goToCart()
 	{
 		cartNavgn.click();

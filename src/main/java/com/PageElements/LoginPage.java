@@ -28,6 +28,9 @@ public class LoginPage extends AbstractComponents{
 	WebElement login_clk;
 	
 	@FindBy(xpath="//div[@id='toast-container']")
+	WebElement loginSuccessMsg;
+	
+	@FindBy(xpath="//div[@id='toast-container']")
 	WebElement errorMessage;
 	
 	public void goTo(String url)
@@ -45,18 +48,32 @@ public class LoginPage extends AbstractComponents{
 		password.sendKeys(pass);
 	}
 	
-	public ProductPage login_button()
+	public void login_button()
 	{
 		login_clk.click();
+	}
+	
+	public ProductPage verifyLoginSuccessMsg()
+	{
+        	
+		waitForElementToAppear(loginSuccessMsg);
+		
+		System.out.println(loginSuccessMsg.getText());
+		
+		waitForElementToDisappear(loginSuccessMsg);
+		
 		ProductPage productLog = new ProductPage(driver);
+		
 		return productLog;
 	}
+	
 	
 	public String errorValidn()
 	{
 		waitForElementToAppear(errorMessage);
 		System.out.println(errorMessage.getText());
-		return errorMessage.getText();		
+		waitForElementToDisappear(errorMessage);
+		return errorMessage.getText();			
 	}
 		
 
