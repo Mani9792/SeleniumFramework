@@ -8,6 +8,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -37,12 +38,18 @@ public class BaseTest_Drivers {
 		String browser = System.getProperty("browser")!=null ? 
 				System.getProperty("browser"):config.configure("browser");
 		
-		if(browser.equalsIgnoreCase("chrome"))
+		if(browser.contains("chrome"))
 		{
 			ChromeOptions co = new ChromeOptions();
 			co.addArguments("--remote-allow-origins=*"); //using this to get rid of Web socket issues in Chrome version > 111..
 			WebDriverManager.chromedriver().setup();
+			if(browser.contains("headless"))
+			{
+				co.addArguments("headless");
+			}
 			driver = new ChromeDriver(co);
+			//To set size
+			driver.manage().window().setSize(new Dimension(1440,900));
 		}
 		
 		else if(browser.equalsIgnoreCase("firefox"))
