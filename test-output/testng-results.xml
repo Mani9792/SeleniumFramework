@@ -1,30 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="3" passed="1" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-12-25T22:24:14 IST" name="Suite" finished-at="2022-12-25T22:24:21 IST" duration-ms="6797">
+  <suite started-at="2023-08-16T01:34:29 GMT-05:00" name="Default suite" finished-at="2023-08-16T01:34:35 GMT-05:00" duration-ms="5758">
     <groups>
     </groups>
-    <test started-at="2022-12-25T22:24:14 IST" name="Test" finished-at="2022-12-25T22:24:21 IST" duration-ms="6797">
-      <class name="com.Tests.ErrorValidation">
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:com.Tests.ErrorValidation@479cbee5]" started-at="2022-12-25T22:24:18 IST" name="launchApplication" finished-at="2022-12-25T22:24:20 IST" duration-ms="1701" status="PASS">
+    <test started-at="2023-08-16T01:34:29 GMT-05:00" name="Default test" finished-at="2023-08-16T01:34:35 GMT-05:00" duration-ms="5758">
+      <class name="com.Samples.ExtentReportUtil">
+        <test-method is-config="true" signature="config()[pri:0, instance:com.Samples.ExtentReportUtil@59474f18]" started-at="2023-08-16T01:34:29 GMT-05:00" name="config" finished-at="2023-08-16T01:34:30 GMT-05:00" duration-ms="348" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- launchApplication -->
-        <test-method signature="login_test()[pri:0, instance:com.Tests.ErrorValidation@479cbee5]" started-at="2022-12-25T22:24:20 IST" name="login_test" description="error validation on login page" finished-at="2022-12-25T22:24:20 IST" duration-ms="579" status="FAIL">
-          <exception class="java.lang.AssertionError">
+        </test-method> <!-- config -->
+        <test-method signature="test()[pri:0, instance:com.Samples.ExtentReportUtil@59474f18]" started-at="2023-08-16T01:34:30 GMT-05:00" name="test" finished-at="2023-08-16T01:34:35 GMT-05:00" duration-ms="5376" status="FAIL">
+          <exception class="org.openqa.selenium.remote.http.ConnectionFailedException">
             <message>
-              <![CDATA[expected [Incorrect email or password.] but found [Incorrect email or password]]]>
+              <![CDATA[Unable to establish websocket connection to http://localhost:57029/devtools/browser/ae49b58e-76d9-4675-b2f4-d60d45a217e0
+Build info: version: '4.1.0', revision: '87802e897b'
+System info: host: 'LAPTOP-JNGBS137', ip: '192.168.1.102', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4.1'
+Driver info: driver.version: ChromeDriver]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [Incorrect email or password.] but found [Incorrect email or password]
-at org.testng.Assert.fail(Assert.java:99)
-at org.testng.Assert.failNotEquals(Assert.java:1037)
-at org.testng.Assert.assertEqualsImpl(Assert.java:140)
-at org.testng.Assert.assertEquals(Assert.java:122)
-at org.testng.Assert.assertEquals(Assert.java:629)
-at org.testng.Assert.assertEquals(Assert.java:639)
-at com.Tests.ErrorValidation.login_test(ErrorValidation.java:44)
+              <![CDATA[org.openqa.selenium.remote.http.ConnectionFailedException: Unable to establish websocket connection to http://localhost:57029/devtools/browser/ae49b58e-76d9-4675-b2f4-d60d45a217e0
+Build info: version: '4.1.0', revision: '87802e897b'
+System info: host: 'LAPTOP-JNGBS137', ip: '192.168.1.102', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4.1'
+Driver info: driver.version: ChromeDriver
+at org.openqa.selenium.remote.http.netty.NettyWebSocket.<init>(NettyWebSocket.java:104)
+at org.openqa.selenium.remote.http.netty.NettyWebSocket.lambda$create$3(NettyWebSocket.java:137)
+at org.openqa.selenium.remote.http.netty.NettyClient.openSocket(NettyClient.java:116)
+at org.openqa.selenium.devtools.Connection.<init>(Connection.java:77)
+at org.openqa.selenium.chromium.ChromiumDriver.lambda$new$2(ChromiumDriver.java:124)
+at java.base/java.util.Optional.map(Optional.java:260)
+at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:122)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:104)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:91)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:46)
+at com.Samples.ExtentReportUtil.test(ExtentReportUtil.java:53)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -41,38 +51,25 @@ at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 at org.testng.TestRunner.privateRun(TestRunner.java:794)
 at org.testng.TestRunner.run(TestRunner.java:596)
 at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:418)
-at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
-at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-at java.base/java.lang.Thread.run(Thread.java:833)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- org.openqa.selenium.remote.http.ConnectionFailedException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- login_test -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.Tests.ErrorValidation@479cbee5]" started-at="2022-12-25T22:24:21 IST" name="tearDown" finished-at="2022-12-25T22:24:21 IST" duration-ms="134" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.Tests.ErrorValidation -->
-      <class name="com.Tests.Login">
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:com.Tests.Login@6aa8e115]" started-at="2022-12-25T22:24:14 IST" name="launchApplication" finished-at="2022-12-25T22:24:17 IST" duration-ms="2993" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchApplication -->
-        <test-method signature="checkOrderPage()[pri:0, instance:com.Tests.Login@6aa8e115]" started-at="2022-12-25T22:24:17 IST" name="checkOrderPage" description="checking the order page" finished-at="2022-12-25T22:24:18 IST" duration-ms="645" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkOrderPage -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.Tests.Login@6aa8e115]" started-at="2022-12-25T22:24:18 IST" name="tearDown" finished-at="2022-12-25T22:24:18 IST" duration-ms="162" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.Tests.Login -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+        </test-method> <!-- test -->
+      </class> <!-- com.Samples.ExtentReportUtil -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

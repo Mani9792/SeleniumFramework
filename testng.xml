@@ -8,7 +8,7 @@
 
   <test thread-count="5" name="Test">
   <classes>
-      <class name="com.Tests.Login"/> 
+      <class name="com.Tests.Login"/> 	
       <class name="com.Tests.ErrorValidation"/>
       
     </classes>

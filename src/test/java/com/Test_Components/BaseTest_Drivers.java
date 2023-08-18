@@ -12,6 +12,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
@@ -30,12 +31,18 @@ public class BaseTest_Drivers {
 	
 	public WebDriver initializeDriver() throws IOException
 	{		
-		String browser = config.configure("browser");
+		//System.getProperty is added in String browser to ensure that the project run as per updates
+		// through the maven commands from terminal
+		
+		String browser = System.getProperty("browser")!=null ? 
+				System.getProperty("browser"):config.configure("browser");
 		
 		if(browser.equalsIgnoreCase("chrome"))
 		{
+			ChromeOptions co = new ChromeOptions();
+			co.addArguments("--remote-allow-origins=*"); //using this to get rid of Web socket issues in Chrome version > 111..
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+			driver = new ChromeDriver(co);
 		}
 		
 		else if(browser.equalsIgnoreCase("firefox"))

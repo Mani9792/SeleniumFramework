@@ -6,6 +6,13 @@
   </listeners>
   <test thread-count="2" parallel="tests" name="Test(failed)">
     <classes>
+      <class name="com.Tests.Login">
+        <methods>
+          <include name="login_test"/>
+          <include name="launchApplication"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.Tests.Login -->
       <class name="com.Tests.ErrorValidation">
         <methods>
           <include name="login_test"/>

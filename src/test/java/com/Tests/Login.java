@@ -34,7 +34,7 @@ public class Login extends BaseTest_Drivers{
 	
 	WebDriver driver;
 	
-	@Test(enabled=false)
+	@Test(enabled=true)
 	public void login_test() throws InterruptedException, IOException {
 		// TODO Auto-generated method stub
 		
